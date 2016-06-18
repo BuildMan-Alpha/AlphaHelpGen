@@ -1,0 +1,137 @@
+[
+  {
+    "title": "HTTP requests don't redirect to HTTPS for a site set to use HTTPS",
+    "description": "It is common for a site set to use HTTPS to allow a request to come in over HTTP and then redirect that request to use HTTPS. Add an \"Enforce secure connection\" option to the security settings to add this behavior so that no post publish configuration on IIS is needed.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/1"
+  },
+  {
+    "title": "New publish profile genie for IIS has too many steps",
+    "description": "Simplify the new publish profile for IIS. Most of the genie pages have default that are used most of the time. Provide a shorter path with only the required prompts and an \"advanced\" path to modify defaults. ",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/2"
+  },
+  {
+    "title": "Add ability to report a bug from the IIS Manager UI",
+    "description": "Make it easier to report a bug and capture OS version, IIS version, and Application Server for IIS version.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/3"
+  },
+  {
+    "title": "Add GeneratePassword() method to the Context.Security API",
+    "description": "This method should generate a password that meets the validation rules defined for the application.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/4"
+  },
+  {
+    "title": "Write a migration guide for migrating existing applications",
+    "description": "An application that runs under the stand-alone server will for the most part run under the Application Server for IIS unchanged. However, there are some patterns that some applications use running under the stand-alone server that will need to be updated for running under the Application Server for IIS. Things like writing files to the webroot are not allowed by default under IIS.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/5"
+  },
+  {
+    "title": "Simple or custom password validation expressions do not work.",
+    "description": "Simple and custom password validation expressions that work under the stand-alone server do not work under the IIS server.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/7"
+  },
+  {
+    "title": "Logging path and grid cache path need to be validated on publish",
+    "description": "Non-default logging path and grid cache path need to be validated that they exist and have the correct permissions set during publish.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/8"
+  },
+  {
+    "title": "Publish error when web.config file size is too large.",
+    "description": "Need to check the web.config file size against what IIS allows and notify the user to bump up the size either manually or through the publish.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/9"
+  },
+  {
+    "title": "Error initializing membership provider on SQL Azure",
+    "description": "The classes and the SQL script for initializing the SQL Server security schema do not work on SQL Azure since some of the tables that need to be modified are restricted. Need to find and document how to manually initialize a SQL Azure security schema.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/10"
+  },
+  {
+    "title": "Large projects publish very slowly",
+    "description": "Using the default publish settings with Microsoft Web Deploy requires generating a staging folder with the entire site so that that Web Deploy will be able to update, add, and remove files from the deploy folder. The process of generating the staging folder needs to be optimized so that publish of large projects are not so time consuming.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/11"
+  },
+  {
+    "title": "Publish removes \"orphaned\" files on server",
+    "description": "Web Deploy syncs the publish staging folder and the IIS server folder which includes removing files that don't exist in the staging folder. This behavior prevents third party packages such as Wordpress from being pre-installed in the IIS server folder.\n\nThis is related to Large projects publish very slowly",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/12"
+  },
+  {
+    "title": "Republish of an AEX file is not automatically reloaded for a running application",
+    "description": "If an AEX file is republished while an application is running the default application pool recycle does not pick up the changed AEX. It should.\n\nWorkaround: Manually stop and start the application's application pool.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/13"
+  },
+  {
+    "title": "Publish Error: Cannot connect to the remote computer. Make sure Web Deploy is installed",
+    "description": "After following the Alpha Anywhere Application Server for IIS Installation Guide publish to IIS fails with an error saying to check that Web Deploy is installed and that the Web Management Service is started:\n\n\n\nSometimes Web Deploy does not get fully installed or, as the error message says the \"Web Management Service\" is not started.\n\nThe installer should be modified to ensure Web Deploy is fully installed and the needed services are running.\n\nWorkaround: Ensure that the Windows services \"Web Management Service\" and \"Web Deployment Agent Service\" are running. \n\n\n\nIf the Web Management Service is not started, it can be enabled and started from IIS Manager. Open the Management Service feature,\n\n\n\nand then enable and start the Management Service.\n\n\n\nIf \"Web Deployment Agent Service\" is missing, go to the Windows Control Panel - Programs and Features, find Microsoft Web Deploy 3.5, right click and then select change. Go to the next wizard page and you'll then need to click a Change button. Make sure all the features are installed. It should look like this:\n\n\n\nIf any of the items have a red X change them so that they are \"Will be installed on local hard drive\".",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/14"
+  },
+  {
+    "title": "Publish to a site's root application will remove any sub applications in the site.",
+    "description": "If you have a site with a sub application as well as a root application, publishing to the root application will cause all sub applications to be removed. A root application of a web site is what will be served when handling a request with no path e.g. \"http://www.mycompany.com/\". A web site can also have sub applications. A sub application name is included in the request path e.g. \"http://www.mycompany.com/app1\". Alpha Anywhere Developer Edition will publish to the root application when the Application name in the publish profile is blank. When an application name is included in the publish profile (\"app1\" in url above), that name is used as the application name in IIS.\n\nWorkaround: Republish the sub applications after publishing the root application.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/15"
+  },
+  {
+    "title": "Custom error pages cannot be a5w pages.",
+    "description": "There is no way to define custom error pages for a site/application. Custom error pages can only be set in IIS Manager and they cannot be .a5w pages.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/16"
+  },
+  {
+    "title": "Slow response on first request after application pool is started",
+    "description": "The first time a page is requested from a site, the response takes a long time. Subsequent requests are much faster.\n\nApplication Initialization is not used by default and there is not publish profile option to turn it on. Add an option to turn it off/on and turn it on by default.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/17"
+  },
+  {
+    "title": "Some file names cause errors with web.config authorization rules",
+    "description": "Publish to IIS will stage all files in a workspace's folder include files added by source control systems like CVS. Deny rules are generated for these files in the web.config file. Some of these files have special characters in them and while the file names are legal, the special characters are not allowed in the authorization rules (deny rules). One example is with CVS that creates a file like this: \".#index.a5w.1.1\". The leading period is not allowed in an authorization rule. There needs to be a way to exclude files from being included in the publish.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/18"
+  },
+  {
+    "title": "Alternate login is not implemented under IIS yet.",
+    "description": "",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/19"
+  },
+  {
+    "title": "Get error when publishing and no web sites are defined in IIS.",
+    "description": "Usually at least one web site is defined under IIS and it is named Default Web Site. However, that web site can be removed leaving none. Publish throws an error when attempting to list sites.\n\n",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/21"
+  },
+  {
+    "title": "Update the version of the MySQL Connector/NET that is installed by the A5InstallMySQLConnector.exe utility.",
+    "description": "",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/23"
+  },
+  {
+    "title": "The \"Publish\" link on the Component Permissions dialog does not publish changed component permissions when the destination is IIS.",
+    "description": "\nWorkaround\nUse the publish button on the Web Projects Control Panel.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/24"
+  },
+  {
+    "title": "email_send() does not work under IIS",
+    "description": "email_send() requires an \"Alpha Five email profile\" in order to work. The Alpha Five email profile isn't currently handled under IIS\n\nWorkaround\nUse email_smtp_open(), email_smtp_send(), and email_smtp_close() instead.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/25"
+  },
+  {
+    "title": "Database access not working with correct user when Active Directory integrated authentication with user impersonation is selected.",
+    "description": "When a connection string uses Integrated authentication and Active Directory integrated authentication with user impersonation is set, database access should be done as the authenticated user, but it is not.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/26"
+  },
+  {
+    "title": "Validate required site configuration on publish for using Windows Integrated Authentication",
+    "description": "The Using Active Directory documentation states some site configuration requirements are necessary for using integrated authentication in an application. These requirements should be validated during publish so the published application will work as expected.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/27"
+  },
+  {
+    "title": "Review requirements for configuration of TLS Forward Secrecy",
+    "description": "",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/28"
+  },
+  {
+    "title": "Add setting to set characters that are not allowed in a query string.",
+    "description": "The list of characters that are not allowed in a query string under IIS is hard coded into the web.config file in the requestPathInvalidCharacters attribute of the httpRuntime element. This is a comma separated list and is set to \"<,>,*,%,&,\\,?\" without the double quotes (and is HTML encoded in the web.config file). Legacy applications may need to allow some of these characters.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/29"
+  },
+  {
+    "title": "Folder level security for a subfolder in a web project is not applied correctly when published to IIS.",
+    "description": "Workaround\n\nYou must set security on each file individually.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/30"
+  }
+]
