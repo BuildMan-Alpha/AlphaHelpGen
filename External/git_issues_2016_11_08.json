@@ -35,11 +35,6 @@
     "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/8"
   },
   {
-    "title": "Publish error when web.config file size is too large.",
-    "description": "Need to check the web.config file size against what IIS allows and notify the user to bump up the size either manually or through the publish.",
-    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/9"
-  },
-  {
     "title": "Error initializing membership provider on SQL Azure",
     "description": "The classes and the SQL script for initializing the SQL Server security schema do not work on SQL Azure since some of the tables that need to be modified are restricted. Need to find and document how to manually initialize a SQL Azure security schema.",
     "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/10"
