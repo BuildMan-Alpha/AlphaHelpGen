@@ -2,7 +2,7 @@
   {
     "title": "HTTP requests don't redirect to HTTPS for a site set to use HTTPS",
     "description": "It is common for a site set to use HTTPS to allow a request to come in over HTTP and then redirect that request to use HTTPS. Add an \"Enforce secure connection\" option to the security settings to add this behavior so that no post publish configuration on IIS is needed.",
-    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/1"
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/1" 
   },
   {
     "title": "New publish profile genie for IIS has too many steps",
