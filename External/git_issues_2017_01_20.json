@@ -35,6 +35,11 @@
     "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/8"
   },
   {
+    "title": "Publish error when web.config file size is too large.",
+    "description": "Need to check the web.config file size against what IIS allows and notify the user to bump up the size either manually or through the publish.",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/9"
+  },
+  {
     "title": "Error initializing membership provider on SQL Azure",
     "description": "The classes and the SQL script for initializing the SQL Server security schema do not work on SQL Azure since some of the tables that need to be modified are restricted. Need to find and document how to manually initialize a SQL Azure security schema.",
     "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/10"
@@ -128,5 +133,10 @@
     "title": "Add option for setting favicon for an application",
     "description": "Browsers look for a favicon in the root application by default unless the page returned has a <link icon=> tag for favicon. Non-default applications are required to have the favicon in the <link icon=> tag. Need a way to specify a favicon for the application without having to manually add the <link icon=> to every page.",
     "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/31"
+  },
+  {
+    "title": "Get \"length not computable\" when downloading sqlite database when using the phonegap filetransfer plugin",
+    "description": "When running under IIS a \"length not computable\" message may be received under phonegap when using the filetransfer plugin to download a sqlite database.\nWorkaround\nSet a MIME Type of \"application/x-sqlite3\" for the extension .db in using the \"MIME Types\" feature in IIS Manager.\n",
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/32"
   }
 ]
