@@ -2,7 +2,7 @@
   {
     "title": "HTTP requests don't redirect to HTTPS for a site set to use HTTPS",
     "description": "It is common for a site set to use HTTPS to allow a request to come in over HTTP and then redirect that request to use HTTPS. Add an \"Enforce secure connection\" option to the security settings to add this behavior so that no post publish configuration on IIS is needed.",
-    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/1" 
+    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/1"
   },
   {
     "title": "New publish profile genie for IIS has too many steps",
@@ -35,24 +35,9 @@
     "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/8"
   },
   {
-    "title": "Publish error when web.config file size is too large.",
-    "description": "Need to check the web.config file size against what IIS allows and notify the user to bump up the size either manually or through the publish.",
-    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/9"
-  },
-  {
     "title": "Error initializing membership provider on SQL Azure",
     "description": "The classes and the SQL script for initializing the SQL Server security schema do not work on SQL Azure since some of the tables that need to be modified are restricted. Need to find and document how to manually initialize a SQL Azure security schema.",
     "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/10"
-  },
-  {
-    "title": "Large projects publish very slowly",
-    "description": "Using the default publish settings with Microsoft Web Deploy requires generating a staging folder with the entire site so that that Web Deploy will be able to update, add, and remove files from the deploy folder. The process of generating the staging folder needs to be optimized so that publish of large projects are not so time consuming.",
-    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/11"
-  },
-  {
-    "title": "Publish removes \"orphaned\" files on server",
-    "description": "Web Deploy syncs the publish staging folder and the IIS server folder which includes removing files that don't exist in the staging folder. This behavior prevents third party packages such as Wordpress from being pre-installed in the IIS server folder.\nThis is related to Large projects publish very slowly",
-    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/12"
   },
   {
     "title": "Republish of an AEX file is not automatically reloaded for a running application",
@@ -65,19 +50,9 @@
     "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/14"
   },
   {
-    "title": "Publish to a site's root application will remove any sub applications in the site.",
-    "description": "If you have a site with a sub application as well as a root application, publishing to the root application will cause all sub applications to be removed. A root application of a web site is what will be served when handling a request with no path e.g. \"http://www.mycompany.com/\". A web site can also have sub applications. A sub application name is included in the request path e.g. \"http://www.mycompany.com/app1\". Alpha Anywhere Developer Edition will publish to the root application when the Application name in the publish profile is blank. When an application name is included in the publish profile (\"app1\" in url above), that name is used as the application name in IIS.\n_Workaround:_ Republish the sub applications after publishing the root application.",
-    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/15"
-  },
-  {
     "title": "Custom error pages cannot be a5w pages.",
     "description": "There is no way to define custom error pages for a site/application. Custom error pages can only be set in IIS Manager and they cannot be .a5w pages.",
     "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/16"
-  },
-  {
-    "title": "Slow response on first request after application pool is started",
-    "description": "The first time a page is requested from a site, the response takes a long time. Subsequent requests are much faster.\nApplication Initialization is not used by default and there is not publish profile option to turn it on. Add an option to turn it off/on and turn it on by default.",
-    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/17"
   },
   {
     "title": "Some file names cause errors with web.config authorization rules",
@@ -98,11 +73,6 @@
     "title": "Update the version of the MySQL Connector/NET that is installed by the A5InstallMySQLConnector.exe utility.",
     "description": "",
     "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/23"
-  },
-  {
-    "title": "The \"Publish\" link on the Component Permissions dialog does not publish changed component permissions when the destination is IIS.",
-    "description": "\nWorkaround\nUse the publish button on the Web Projects Control Panel.",
-    "href": "https://github.com/alphasoftware/AlphaAnywhere/issues/24"
   },
   {
     "title": "email_send() does not work under IIS",
